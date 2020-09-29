@@ -6,7 +6,7 @@ class Volunteer(models.Model):
     """Model for volunteer creation"""
     name = models.CharField(max_length=50)
     photo = models.ImageField(upload_to='photos/%d/%m/%y/')
-    age = models.IntegerField(max_length=3)
+    age = models.IntegerField()
     degree = models.CharField(max_length=50, blank=True)
     phone = models.CharField(max_length=20)
     email = models.CharField(max_length=100)
