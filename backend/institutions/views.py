@@ -26,7 +26,7 @@ class SearchView(APIView):
         data = self.request.data
 
         institution_type = data['institution_type']
-        queryset = queryset.filter(Institution_type__iexact=institution_type)
+        queryset = queryset.filter(institution_type__iexact=institution_type)
         
         has_photos = data['has_photos']
         if has_photos == '1+':
@@ -90,6 +90,6 @@ class SearchView(APIView):
         keywords = data['keywords']
         queryset = queryset.filter(description__icontains=keywords)
 
-        serializer = InstituteSerializer(queryset, many=True)
+        serializer = InstitutionSerializer(queryset, many=True)
 
         return Response(serializer.data)
