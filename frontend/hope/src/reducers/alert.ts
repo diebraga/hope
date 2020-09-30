@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { SET_ALERT, REMOVE_ALERT } from '../actions/types';
 
-const initialState = [];
+const initialState: any[] = [];
 
-export default function (state = initialState, action) {
+export default function (state = initialState, action: any): string[] {
   const { type, payload } = action;
 
   switch (type) {

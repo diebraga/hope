@@ -6,13 +6,19 @@ import {
   LOGOUT,
 } from '../actions/types';
 
-const initialState = {
+interface Proops {
+  isAuthenticated: string | null | true | false;
+  loading: boolean;
+  token: any;
+}
+
+const initialState: Proops = {
   token: localStorage.getItem('token'),
   isAuthenticated: null,
   loading: false,
 };
 
-export default function (state = initialState, action) {
+export default function (state = initialState, action: any): Proops {
   const { type, payload } = action;
 
   switch (type) {

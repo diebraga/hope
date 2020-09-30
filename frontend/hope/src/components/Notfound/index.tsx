@@ -1,13 +1,13 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import { Container } from './styles';
 
 const Notfound: React.FC = () => {
   return (
-    <div>
+    <Container>
       <h1>404 Not Found</h1>
-      <h3>The link requested does not exist in our website.</h3>
-    </div>
+      <p>The link requested does not exist in our website.</p>
+    </Container>
   );
 };
 
