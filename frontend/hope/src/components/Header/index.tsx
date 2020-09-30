@@ -1,12 +1,13 @@
 /* eslint-disable react/forbid-prop-types */
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { logout } from '../../actions/auth';
+import Alert from '../Alert';
 
-// import { Container } from './styles';
+import { Container } from './styles';
 
 const Header: React.FC = ({
   auth: { isAuthenticated, loading },
@@ -20,10 +21,11 @@ const Header: React.FC = ({
 
   const guestLinks = (
     <>
-      <Link className="" to="/login">
+      <Link className="text-dark" to="/login">
         Login
       </Link>
-      <Link className="" to="/signup">
+      &nbsp; &nbsp;
+      <Link className="text-dark" to="/signup">
         Sign Up
       </Link>
     </>
@@ -31,40 +33,57 @@ const Header: React.FC = ({
 
   return (
     <>
-      <nav className="">
-        <div className="">
-          <div className="">
-            <Link className="" to="/">
-              Hope
-            </Link>
-          </div>
+      <Container>
+        <div className="navbar navbar-expand-lg-xl navbar-light bg-success">
+          <Link className="navbar-brand" to="/">
+            4_Hope
+          </Link>
           <div className="">
             {!loading && <>{isAuthenticated ? authLinks : guestLinks}</>}
           </div>
         </div>
-        <div className="">
-          <li className="">
-            <NavLink className="" exact to="/">
-              Home
-            </NavLink>
-          </li>
-          <li className="">
-            <NavLink className="" exact to="/">
-              aaaa
-            </NavLink>
-          </li>
-          <li className="">
-            <NavLink className="" exact to="/">
-              About
-            </NavLink>
-          </li>
-          <li className="">
-            <NavLink className="" exact to="/">
-              aaa
-            </NavLink>
-          </li>
+        <div className="navbar navbar-expand-md navbar-light bg-light">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div
+            className="collapse navbar-collapse justify-content-center"
+            id="navbarSupportedContent"
+          >
+            <ul className="navbar-nav">
+              <li>
+                <NavLink className="nav-link" exact to="/">
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className="nav-link" exact to="/">
+                  aaaa
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className="nav-link" exact to="/">
+                  About
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className="nav-link" exact to="/">
+                  aaa
+                </NavLink>
+              </li>
+            </ul>
+          </div>
         </div>
-      </nav>
+        <Alert />
+      </Container>
     </>
   );
 };
