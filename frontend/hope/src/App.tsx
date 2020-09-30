@@ -12,9 +12,10 @@ const App: React.FC = () => (
   <>
     <Provider store={store}>
       <GlobalStyle />
-      <Header />
 
       <Router>
+        <Header />
+
         <Routes />
       </Router>
     </Provider>
