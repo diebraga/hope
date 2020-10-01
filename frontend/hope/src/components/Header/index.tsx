@@ -14,18 +14,18 @@ const Header: React.FC = ({
   logout,
 }: any) => {
   const authLinks = (
-    <a className="" onClick={logout} href="#!">
+    <a className="text-light" onClick={logout} href="#!">
       Logout
     </a>
   );
 
   const guestLinks = (
     <>
-      <Link className="text-dark" to="/login">
-        Login
+      <Link className="text-light" to="/signin">
+        Sign In
       </Link>
       &nbsp; &nbsp;
-      <Link className="text-dark" to="/signup">
+      <Link className="text-light" to="/signup">
         Sign Up
       </Link>
     </>

@@ -8,16 +8,7 @@ import {
   LOGOUT,
 } from './types';
 
-interface Proops {
-  name: string;
-  email: string;
-  password: string;
-  password2: string;
-}
-
-// auth for signin
-
-export const login = ({ email, password }: Proops) => async (dispatch: any) => {
+export const login = (email, password) => async dispatch => {
   const config = {
     headers: {
       'Content-Type': 'application/json',
@@ -28,7 +19,7 @@ export const login = ({ email, password }: Proops) => async (dispatch: any) => {
 
   try {
     const res = await axios.post(
-      `http//:localhost:8000/api/token/`,
+      `http://127.0.0.1:8000/api/token/`,
       body,
       config,
     );
@@ -48,11 +39,12 @@ export const login = ({ email, password }: Proops) => async (dispatch: any) => {
   }
 };
 
-// auth for signup
-
-export const signup = ({ name, email, password, password2 }: Proops) => async (
-  dispatch: any,
-) => {
+export const signup = ({
+  name,
+  email,
+  password,
+  password2,
+}) => async dispatch => {
   const config = {
     headers: {
       'Content-Type': 'application/json',
@@ -63,7 +55,7 @@ export const signup = ({ name, email, password, password2 }: Proops) => async (
 
   try {
     const res = await axios.post(
-      `http//:localhost:8000/api/accounts/signup`,
+      `http://127.0.0.1:8000/api/accounts/signup`,
       body,
       config,
     );
@@ -73,7 +65,7 @@ export const signup = ({ name, email, password, password2 }: Proops) => async (
       payload: res.data,
     });
 
-    dispatch(setAlert('Authenticated successfully', 'success'));
+    dispatch(login(email, password));
   } catch (err) {
     dispatch({
       type: SIGNUP_FAIL,
@@ -83,7 +75,7 @@ export const signup = ({ name, email, password, password2 }: Proops) => async (
   }
 };
 
-export const logout = () => (dispatch: any) => {
+export const logout = () => dispatch => {
   dispatch(setAlert('logout successful.', 'success'));
   dispatch({ type: LOGOUT });
 };
