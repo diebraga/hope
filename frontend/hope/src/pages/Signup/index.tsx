@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { setAlert } from '../../actions/alert';
 import { signup } from '../../actions/auth';
 
-// import { Container } from './styles';
+import { Container } from './styles';
 
 const Signup: React.FC = ({ setAlert, signup, isAuthenticated }: any) => {
   const [formData, setFormData] = useState({
@@ -31,66 +31,65 @@ const Signup: React.FC = ({ setAlert, signup, isAuthenticated }: any) => {
   if (isAuthenticated) return <Redirect to="/" />;
 
   return (
-    <div className="auth">
-      <Helmet>
-        <title>4_Hope - Sign Up</title>
-        <meta name="description" content="sign up page" />
-      </Helmet>
-      <h1 className="">Sign Up</h1>
-      <p className="">Create your Account</p>
-      <form className="" onSubmit={e => onSubmit(e)}>
-        <div className="">
-          <input
-            className=""
-            type="text"
-            placeholder="Name"
-            name="name"
-            value={name}
-            onChange={e => onChange(e)}
-            required
-          />
+    <>
+      <Container>
+        <Helmet>
+          <title>4_Hope - Sign Up</title>
+          <meta name="description" content="sign up page" />
+        </Helmet>
+        <div className="text-center">
+          <h1 className="">Sign Up</h1>
+          <p className="">Create your Account</p>
+          <form className="" onSubmit={e => onSubmit(e)}>
+            <div className="form-group">
+              <input
+                className="form-control"
+                type="text"
+                placeholder="Name"
+                name="name"
+                value={name}
+                onChange={e => onChange(e)}
+                required
+              />
+              <input
+                className="form-control"
+                type="email"
+                placeholder="Email"
+                name="email"
+                value={email}
+                onChange={e => onChange(e)}
+                required
+              />
+              <input
+                className="form-control"
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={password}
+                onChange={e => onChange(e)}
+              />
+              <input
+                className="form-control"
+                type="password"
+                placeholder="Confirm Password"
+                name="password2"
+                value={password2}
+                onChange={e => onChange(e)}
+              />
+              <button
+                className="btn btn-primary btn-lg btn-block"
+                type="submit"
+              >
+                Register
+              </button>
+            </div>
+          </form>
+          <p className="text-center ">
+            <Link to="/signin">Already have an account?</Link>
+          </p>
         </div>
-        <div className="">
-          <input
-            className="auth__form__input"
-            type="email"
-            placeholder="Email"
-            name="email"
-            value={email}
-            onChange={e => onChange(e)}
-            required
-          />
-        </div>
-        <div className="">
-          <input
-            className="auth__form__input"
-            type="password"
-            placeholder="Password"
-            name="password"
-            value={password}
-            onChange={e => onChange(e)}
-          />
-        </div>
-        <div className="">
-          <input
-            className=""
-            type="password"
-            placeholder="Confirm Password"
-            name="password2"
-            value={password2}
-            onChange={e => onChange(e)}
-          />
-        </div>
-        <button className="" type="submit">
-          Register
-        </button>
-      </form>
-      <p className="">
-        <Link className="" to="/login">
-          Already have an account?
-        </Link>
-      </p>
-    </div>
+      </Container>
+    </>
   );
 };
 
