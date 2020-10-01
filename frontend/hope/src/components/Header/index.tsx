@@ -4,13 +4,14 @@ import { Link, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { logout } from '../../actions/auth';
+import { logout } from '../../actions/auth.js';
 import Alert from '../Alert';
 
 import { Container } from './styles';
 
 const Header: React.FC = ({
   auth: { isAuthenticated, loading },
+  // eslint-disable-next-line no-shadow
   logout,
 }: any) => {
   const authLinks = (

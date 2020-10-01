@@ -34,8 +34,8 @@ const Signin: React.FC = ({ login, isAuthenticated }: any) => {
           <meta name="description" content="sign in page" />
         </Helmet>
         <div className="text-center">
-          <h1 className="">Sign In</h1>
-          <p className="">Sign into your Account</p>
+          <h1 className="text-dark">Sign In</h1>
+          <p className="text-dark">Sign into your Account</p>
           <form className="" onSubmit={e => onSubmit(e)}>
             <div className="form-group">
               <input
@@ -64,7 +64,7 @@ const Signin: React.FC = ({ login, isAuthenticated }: any) => {
             </div>
           </form>
           <p className="text-center ">
-            <Link to="/signin">Already have an account?</Link>
+            <Link to="/signup">Do not have an account?</Link>
           </p>
         </div>
       </Container>

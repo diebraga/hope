@@ -38,8 +38,8 @@ const Signup: React.FC = ({ setAlert, signup, isAuthenticated }: any) => {
           <meta name="description" content="sign up page" />
         </Helmet>
         <div className="text-center">
-          <h1 className="">Sign Up</h1>
-          <p className="">Create your Account</p>
+          <h1 className="text-dark">Sign Up</h1>
+          <p className="text-dark">Create your Account</p>
           <form className="" onSubmit={e => onSubmit(e)}>
             <div className="form-group">
               <input
