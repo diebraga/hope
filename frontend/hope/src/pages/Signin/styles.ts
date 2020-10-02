@@ -1,8 +1,6 @@
 import styled from 'styled-components';
-import Background from '../../assets/back.jpg';
 
 export const Container = styled.div`
-  background: url(${Background}) no-repeat center;
   padding-top: 30px;
 
   display: flex;

@@ -20,4 +20,10 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+  .form-control:focus {
+  border-color: #03fc0f;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(3, 252, 15);
+}
+
 `;

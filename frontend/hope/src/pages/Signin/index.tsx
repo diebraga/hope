@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { login } from '../../actions/auth';
+import { login } from '../../actions/auth.js';
 
 import { Container } from './styles';
 
@@ -56,7 +56,7 @@ const Signin: React.FC = ({ login, isAuthenticated }: any) => {
                 onChange={e => onChange(e)}
               />
               <button
-                className="btn btn-primary btn-lg btn-block"
+                className="btn btn-success btn-lg btn-block"
                 type="submit"
               >
                 Register
