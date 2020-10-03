@@ -39,7 +39,7 @@ const Header: React.FC = ({
           <Link className="navbar-brand" to="/">
             4_Hope
           </Link>
-          <div className="">
+          <div>
             {!loading && <>{isAuthenticated ? authLinks : guestLinks}</>}
           </div>
         </div>
@@ -61,22 +61,22 @@ const Header: React.FC = ({
           >
             <ul className="navbar-nav">
               <li>
-                <NavLink className="nav-link" exact to="/">
+                <NavLink className="nav-link text-secondary" exact to="/">
                   Home
                 </NavLink>
               </li>
               <li>
-                <NavLink className="nav-link" exact to="/">
+                <NavLink className="nav-link text-secondary" exact to="/">
                   aaaa
                 </NavLink>
               </li>
               <li>
-                <NavLink className="nav-link" exact to="/">
+                <NavLink className="nav-link text-secondary" exact to="/">
                   About
                 </NavLink>
               </li>
               <li>
-                <NavLink className="nav-link" exact to="/">
+                <NavLink className="nav-link text-secondary" exact to="/">
                   aaa
                 </NavLink>
               </li>

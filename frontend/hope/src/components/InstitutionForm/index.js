@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Loader from 'react-loader-spinner';
 import PropTypes from 'prop-types';
+import { BsSearch } from 'react-icons/bs'
 
-// import { Container } from './styles';
+import { Container } from './styles';
 
 const InstitutionForm = props => {
   const [formData, setFormData] = useState({
@@ -52,49 +53,53 @@ const InstitutionForm = props => {
   };
 
   return (
-    <form className='' onSubmit={e => onSubmit(e)}>
-        <div className='row'>
-            <div className=''>
-                <div className=''>
-                    <label className='' htmlFor='institution_type'>Humanitarian or Environment</label>
-                    <select className='' name='institution_type' onChange={e => onChange(e)} value={institution_type}>
-                        <option>Humanitarian</option>
+    <Container>
+      <form onSubmit={e => onSubmit(e)}>
+        <div className='row justify-content-around text-center'>
+          <label className='col-sm-3 hide' for="institution_type">Category</label>
+          <label className='col-sm-3 hide' for="media">Media</label>
+          <label className='col-sm-3 hide' for="keywords">Search</label>
+        </div>
+
+        <div className='row justify-content-around text-center form-group'>
+          <div className='col-sm-3 hide'>
+            <select className='form-control' name='institution_type' onChange={e => onChange(e)} value={institution_type}>
+              <option>Humanitarian</option>
               <option>Environment</option>
             </select>
           </div>
+
+          <div className='col-sm-3 hide'>
+            <select className='form-control' name='media' onChange={e => onChange(e)} value={has_photos}>
+              <option>1+</option>
+              <option>3+</option>
+              <option>5+</option>
+              <option>10+</option>
+              <option>15+</option>
+            </select>
+          </div>
+
+          <div className='col-sm-3'>
+            <BsSearch className="show" />
+            <input className='form-control' name='keywords' type='text' onChange={e => onChange(e)} value={keywords} />
+          </div>
         </div>
-
-            <div className=''>
-                <label className='' htmlFor='has_photos'>Has Photos</label>
-                <select className='' name='has_photos' onChange={e => onChange(e)} value={has_photos}>
-                        <option>1+</option>
-            <option>3+</option>
-            <option>5+</option>
-            <option>10+</option>
-            <option>15+</option>
-          </select>
+        <br />
+        <div className='col-sm-12'>
+          {loading ?
+            <div className='d-flex justify-content-center'>
+              <Loader
+                type="ThreeDots"
+                color="#424242"
+                height={25}
+                width={25}
+              />
+            </div> :
+            <button className='btn btn-success btn-sm btn-block' type="submit">Submit</button>
+          }
         </div>
-
-            <div className=''>
-                <label className='' htmlFor='keywords'>Keywords</label>
-                <input className='' name='keywords' type='text' onChange={e => onChange(e)} value={keywords} />
-              </div>
-
-              <div className=''>
-                    {loading ?
-                        <div className=''>
-                            <Loader
-                                type="Oval"
-                                color="#424242"
-                                height={50}
-                                width={50}
-                            />
-                        </div> :
-                        <button className=''>Search</button>
-                    }
-                </div>
-            </div>
-        </form>
+      </form>
+    </Container>
     );
 };
 
