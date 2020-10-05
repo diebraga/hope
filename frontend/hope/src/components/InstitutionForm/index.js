@@ -56,13 +56,13 @@ const InstitutionForm = props => {
     <Container>
       <form onSubmit={e => onSubmit(e)}>
         <div className='row justify-content-around text-center'>
-          <label className='col-sm-3 hide' for="institution_type">Category</label>
-          <label className='col-sm-3 hide' for="media">Media</label>
-          <label className='col-sm-3 hide' for="keywords">Search</label>
+          <label className='col-sm-4 hide' for="institution_type">Category</label>
+          <label className='col-sm-4 hide' for="media">Media</label>
+          <label className='col-sm-4 hide' for="keywords">Search</label>
         </div>
 
         <div className='row justify-content-around text-center form-group'>
-          <div className='col-sm-3 hide'>
+          <div className='col-sm-4 hide'>
             <select className='form-control' name='institution_type' onChange={e => onChange(e)} value={institution_type}>
               <option>Humanitarian</option>
               <option>Environment</option>

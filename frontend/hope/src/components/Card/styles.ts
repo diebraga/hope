@@ -5,8 +5,8 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding: 16px;
-  border: 1px solid var(--border);
   border-radius: 6px;
+  height: 300px;
 
   h3 {
     font-size: 20px;

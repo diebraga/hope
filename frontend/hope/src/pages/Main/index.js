@@ -43,19 +43,19 @@ const Main = () => {
   };
 
   return (
-    <main className="">
+    <main>
       <Helmet>
         <title>4_Hope - Home</title>
         <meta name="description" content="4_Hope Estate Home Page" />
       </Helmet>
-      <section className="">
+      <section>
         <InstitutionForm setInstitutions={setInstitutions} />
       </section>
-      <section className="">
+      <section>
         <Institutions institutions={currentinstitutions} />
       </section>
-      <section className="">
-        <div className="">
+      <section>
+        <div>
           {Institutions.length !== 0 ? (
             <Pagination
               itemsPerPage={institutionsPerPage}

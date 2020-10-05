@@ -20,20 +20,22 @@ const Card: React.FC<Proops> = proops => {
 
   return (
     <Container>
-      <div className="card card-body col-sm-3">
+      <div className="card card-body col-md-4">
         <h3>{proops.institution_name}</h3>
         <div>
           <img className="card-img-top" src={proops.photo_main} alt="House" />
         </div>
-        <p className="card-body">
-          {proops.country}
+        <br />
+        <p>
+          <b>Country: </b>&nbsp;{proops.country}
           <br />
-          {proops.city}
-        </p>
-        <p />
-        <p>{proops.state}</p>
+          <b>City: </b>&nbsp;{proops.city}
+          <br />
+          <b>State: </b>{proops.state || 'Not defined'}
+          <br />
 
-        <p>{proops.institution_type}</p>
+          <b>{proops.institution_type}</b>
+        </p>
         <Link to={`/institutions/${proops.slug}`}>View Institutions</Link>
       </div>
     </Container>
