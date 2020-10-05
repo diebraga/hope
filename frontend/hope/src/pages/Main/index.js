@@ -55,7 +55,7 @@ const Main = () => {
         <Institutions institutions={currentinstitutions} />
       </section>
       <section className="">
-        <div className="row">
+        <div className="">
           {Institutions.length !== 0 ? (
             <Pagination
               itemsPerPage={institutionsPerPage}
