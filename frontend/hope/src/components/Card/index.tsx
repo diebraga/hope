@@ -8,9 +8,8 @@ interface Proops {
   photo_main: string;
   country: string;
   city: string;
-  state: string;
+  state?: string;
   institution_type: string;
-  zipcode: string;
   slug: string;
 }
 
@@ -21,23 +20,21 @@ const Card: React.FC<Proops> = proops => {
 
   return (
     <Container>
-      <div className="card">
-        <h3 className="">{proops.institution_name}</h3>
-        <div className="">
-          <img className="" src={proops.photo_main} alt="House" />
+      <div className="card card-body col-sm-3">
+        <h3>{proops.institution_name}</h3>
+        <div>
+          <img className="card-img-top" src={proops.photo_main} alt="House" />
         </div>
-        <p className="">
-          {proops.country},{proops.city},{proops.state}
+        <p className="card-body">
+          {proops.country}
+          <br />
+          {proops.city}
         </p>
-        <div className="">
-          <div className="">
-            <p className="">{proops.zipcode}</p>
-            <p className="">{proops.institution_type}</p>
-          </div>
-        </div>
-        <Link className="" to={`/institutions/${proops.slug}`}>
-          View Institutions
-        </Link>
+        <p />
+        <p>{proops.state}</p>
+
+        <p>{proops.institution_type}</p>
+        <Link to={`/institutions/${proops.slug}`}>View Institutions</Link>
       </div>
     </Container>
   );

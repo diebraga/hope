@@ -69,7 +69,7 @@ const InstitutionForm = props => {
             </select>
           </div>
 
-          <div className='col-sm-3 hide'>
+          <div className='col-sm-4 hide'>
             <select className='form-control' name='media' onChange={e => onChange(e)} value={has_photos}>
               <option>1+</option>
               <option>3+</option>
@@ -79,7 +79,7 @@ const InstitutionForm = props => {
             </select>
           </div>
 
-          <div className='col-sm-3'>
+          <div className='col-sm-4'>
             <BsSearch className="show" />
             <input className='form-control' name='keywords' type='text' onChange={e => onChange(e)} value={keywords} />
           </div>

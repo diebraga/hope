@@ -3,7 +3,7 @@ import React from 'react';
 // import { Container } from './styles';
 
 const Pagination: React.FC = () => {
-  return <div>Page</div>;
+  return <div />;
 };
 
 export default Pagination;
