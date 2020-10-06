@@ -36,7 +36,7 @@ const Card: React.FC<Proops> = proops => {
 
           <b>{proops.institution_type}</b>
         </p>
-        <Link to={`/institutions/${proops.slug}`}>View Institutions</Link>
+        <Link to={`/institutions/${proops.slug}`}>View Details</Link>
       </div>
     </Container>
   );

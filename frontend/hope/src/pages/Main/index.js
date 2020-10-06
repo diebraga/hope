@@ -69,6 +69,7 @@ const Main = () => {
           ) : null}
         </div>
       </section>
+      <br/>
     </main>
   );
 };

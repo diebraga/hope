@@ -99,6 +99,7 @@ const InstitutionForm = props => {
           }
         </div>
       </form>
+      <br/>
     </Container>
     );
 };

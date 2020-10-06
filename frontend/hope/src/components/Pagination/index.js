@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Container } from "./styles";
 const Pagination = (props) => {
   const getNumbers = () => {
     let numbers = [];
@@ -42,7 +41,7 @@ const Pagination = (props) => {
   };
 
   return (
-    <Container>
+    <>
     <div className='col-sm-12'>
     &nbsp;
       <div onClick={() => props.previous()} className='btn btn-success'>
@@ -55,7 +54,7 @@ const Pagination = (props) => {
         Next
       </div>
     </div>
-    </Container>
+    </>
   );
 };
 

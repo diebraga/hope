@@ -6,7 +6,6 @@ export const Container = styled.div`
   justify-content: space-between;
   padding: 16px;
   border-radius: 6px;
-  height: 300px;
 
   h3 {
     font-size: 20px;

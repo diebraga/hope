@@ -23,12 +23,12 @@ const institutions = ({ institutions }) => {
 
     for (let i = 0; i < institutions.length; i += 3) {
       result.push(
-        <div className="">
-          <div className="">{institutionsOnPage[i]}</div>
-          <div className="">
+        <div>
+          <div>{institutionsOnPage[i]}</div>
+          <div>
             {institutionsOnPage[i + 1] ? institutionsOnPage[i + 1] : null}
           </div>
-          <div className="">
+          <div>
             {institutionsOnPage[i + 2] ? institutionsOnPage[i + 2] : null}
           </div>
         </div>,
