@@ -14,10 +14,6 @@ interface Proops {
 }
 
 const Card: React.FC<Proops> = proops => {
-  const numberWithCommas = (x: any): any => {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  };
-
   return (
     <Container>
       <div className="card card-body col-md-4">
@@ -27,13 +23,17 @@ const Card: React.FC<Proops> = proops => {
         </div>
         <br />
         <p>
-          <b>Country: </b>&nbsp;{proops.country}
+          <b>Country: </b>
+          &nbsp;
+          {proops.country}
           <br />
-          <b>City: </b>&nbsp;{proops.city}
+          <b>City: </b>
+          &nbsp;
+          {proops.city}
           <br />
-          <b>State: </b>{proops.state || 'Not defined'}
+          <b>State: </b>
+          {proops.state || 'Not defined'}
           <br />
-
           <b>{proops.institution_type}</b>
         </p>
         <Link to={`/institutions/${proops.slug}`}>View Details</Link>

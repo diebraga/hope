@@ -66,8 +66,8 @@ const Header: React.FC = ({
                 </NavLink>
               </li>
               <li>
-                <NavLink className="nav-link text-secondary" exact to="/">
-                  aaaa
+                <NavLink className="nav-link text-secondary" exact to="/search">
+                  Search
                 </NavLink>
               </li>
               <li>

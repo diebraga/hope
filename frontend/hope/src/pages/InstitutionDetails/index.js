@@ -9,10 +9,6 @@ const InstitutionDetails = (props) => {
   const [institution, setInstitution] = useState({});
   const [vonlunteer, setvonlunteer] = useState({});
 
-  const numberWithCommas = (x) => {
-      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  };
-
   useEffect(() => {
       const slug = props.match.params.id;
 

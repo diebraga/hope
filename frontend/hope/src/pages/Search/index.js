@@ -6,7 +6,7 @@ import Pagination from '../../components/Pagination';
 
 // import { Container } from './styles';
 
-const Main = () => {
+const Search = () => {
   const [institutions, setInstitutions] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [institutionsPerPage, setinstitutionsPerPage] = useState(3);
@@ -74,4 +74,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Search;
