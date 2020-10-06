@@ -38,11 +38,7 @@ const institutions = ({ institutions }) => {
     return result;
   };
 
-  return (
-      <div>
-          {getInstitutions()}
-      </div>
-  );
-}
+  return <div>{getInstitutions()}</div>;
+};
 
 export default institutions;
