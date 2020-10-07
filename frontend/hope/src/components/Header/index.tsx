@@ -15,7 +15,7 @@ const Header: React.FC = ({
   logout,
 }: any) => {
   const authLinks = (
-    <a className="text-light" onClick={logout} href="#!">
+    <a className="text-light" onClick={logout} href="/signin">
       Logout
     </a>
   );
