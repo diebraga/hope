@@ -4,8 +4,6 @@ import InstitutionForm from '../../components/InstitutionForm';
 import Institutions from '../../components/Institutions';
 import Pagination from '../../components/Pagination';
 
-// import { Container } from './styles';
-
 const Search = () => {
   const [institutions, setInstitutions] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -46,7 +44,7 @@ const Search = () => {
     <main>
       <Helmet>
         <title>4_Hope - Home</title>
-        <meta name="description" content="4_Hope Estate Home Page" />
+        <meta name="description" content="4_Hope Home Page" />
       </Helmet>
       <section>
         <InstitutionForm setInstitutions={setInstitutions} />

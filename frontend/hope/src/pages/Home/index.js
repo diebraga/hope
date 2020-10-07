@@ -4,9 +4,7 @@ import axios from 'axios';
 import Card from '../../components/Card';
 import Pagination from '../../components/Pagination';
 
-// import { Container } from './styles';
-
-const Institutions = () => {
+const Home = () => {
   const [institutions, setInstitutions] = useState([]);
   const [count, setCount] = useState(0);
   const [previous, setPrevious] = useState('');
@@ -53,12 +51,12 @@ const Institutions = () => {
 
     for (let i = 0; i < institutions.length; i += 3) {
       result.push(
-        <div key={i} className="row">
-          <div className="col-1-of-3">{display[i]}</div>
-          <div className="col-1-of-3">
+        <div key={i}>
+          <div>{display[i]}</div>
+          <div>
             {display[i + 1] ? display[i + 1] : null}
           </div>
-          <div className="col-1-of-3">
+          <div>
             {display[i + 2] ? display[i + 2] : null}
           </div>
         </div>,
@@ -110,11 +108,11 @@ const Institutions = () => {
         <title>4_Hope - Institutions</title>
         <meta name="description" content="institutions page" />
       </Helmet>
-      <section className="">
+      <section>
         {displayInstitutons()}
       </section>
-      <section className="">
-        <div className="row">
+      <section>
+        <div>
           <Pagination
             itemsPerPage={3}
             count={count}
@@ -130,4 +128,4 @@ const Institutions = () => {
   );
 };
 
-export default Institutions;
+export default Home;

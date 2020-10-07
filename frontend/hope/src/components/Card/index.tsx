@@ -16,10 +16,14 @@ interface Proops {
 const Card: React.FC<Proops> = proops => {
   return (
     <Container>
-      <div className="card card-body col-md-4">
-        <h3>{proops.institution_name}</h3>
+      <div className="card card-body card-header col-md-4">
+        <h3 className="card-header">{proops.institution_name}</h3>
         <div>
-          <img className="card-img-top" src={proops.photo_main} alt="House" />
+          <img
+            className="card-img-top"
+            src={proops.photo_main}
+            alt="institution"
+          />
         </div>
         <br />
         <p>
