@@ -5,4 +5,8 @@ export const Container = styled.div`
     padding-left: 30px;
     padding-right: 30px;
   }
+
+  a {
+    text-decoration: none;
+  }
 `;

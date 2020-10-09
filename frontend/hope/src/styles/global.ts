@@ -22,8 +22,14 @@ export default createGlobalStyle`
   }
 
   .form-control:focus {
-  border-color: #03fc0f;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(3, 252, 15);
+  border-color: #f0380e;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(207, 40, 2);
 }
+
+  a {
+      &:hover {
+        color: darkblue;
+      }
+    }
 
 `;

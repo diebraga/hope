@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { FiCornerDownLeft } from 'react-icons/fi';
 import PropTypes from 'prop-types';
+import Header from '../../components/Header';
 import { setAlert } from '../../actions/alert';
-import { signup } from '../../actions/auth';
+import { signup } from '../../actions/auth.js';
 
 import { Container } from './styles';
 
@@ -33,6 +35,7 @@ const Signup: React.FC = ({ setAlert, signup, isAuthenticated }: any) => {
 
   return (
     <>
+      <Header />
       <Container>
         <Helmet>
           <title>4_Hope - Sign Up</title>
@@ -77,17 +80,18 @@ const Signup: React.FC = ({ setAlert, signup, isAuthenticated }: any) => {
                 value={password2}
                 onChange={e => onChange(e)}
               />
-              <button
-                className="btn btn-success btn-lg btn-block"
-                type="submit"
-              >
+              <button className="btn btn-danger btn-lg btn-block" type="submit">
                 Register
               </button>
             </div>
           </form>
-          <p className="text-center ">
+          <p>
             <Link to="/signin">Already have an account?</Link>
           </p>
+          <Link to="/">
+            <FiCornerDownLeft />
+            &nbsp;Initial page
+          </Link>
         </div>
       </Container>
     </>

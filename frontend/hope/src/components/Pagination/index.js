@@ -9,12 +9,12 @@ const Pagination = (props) => {
 
       for (let i = 0; i < props.count; i += itemsPerPage) {
         const page = pageNumber;
-        let style = 'btn btn-success';
+        let style = 'btn btn-danger';
         let content = null;
 
 
           if (props.active === page) {
-            style = 'btn btn-success active';
+            style = 'btn btn-danger active';
             content = (
               <div key={i} className={style}>
                 &nbsp;
@@ -44,13 +44,13 @@ const Pagination = (props) => {
     <>
     <div className='col-sm-12'>
     &nbsp;
-      <div onClick={() => props.previous()} className='btn btn-success'>
+      <div onClick={() => props.previous()} className='btn btn-danger'>
         Previous
       </div>
         &nbsp;&nbsp;
         {getNumbers()}
         &nbsp;&nbsp;
-      <div onClick={() => props.next()} className='btn btn-success'>
+      <div onClick={() => props.next()} className='btn btn-danger'>
         Next
       </div>
     </div>

@@ -1,6 +1,6 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -35,8 +35,8 @@ const Header: React.FC = ({
   return (
     <>
       <Container>
-        <div className="navbar navbar-expand-lg-xl navbar-light bg-success">
-          <Link className="navbar-brand" to="/">
+        <div className="navbar navbar-expand-lg-xl navbar-light bg-danger">
+          <Link className="navbar-brand text-light" to="/">
             4_Hope
           </Link>
           <div>
@@ -61,24 +61,29 @@ const Header: React.FC = ({
           >
             <ul className="navbar-nav">
               <li>
-                <NavLink className="nav-link text-secondary" exact to="/">
+                <Link className="nav-link text-secondary" to="/">
+                  Wellcome
+                </Link>
+              </li>
+              <li>
+                <Link className="nav-link text-secondary" to="/home">
                   Home
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink className="nav-link text-secondary" exact to="/search">
+                <Link className="nav-link text-secondary" to="/search">
                   Search
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink className="nav-link text-secondary" exact to="/">
+                <Link className="nav-link text-secondary" to="/about">
                   About
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink className="nav-link text-secondary" exact to="/">
+                <Link className="nav-link text-secondary" to="/">
                   aaa
-                </NavLink>
+                </Link>
               </li>
             </ul>
           </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
+import Header from '../../components/Header';
 import InstitutionForm from '../../components/InstitutionForm';
 import Institutions from '../../components/Institutions';
 import Pagination from '../../components/Pagination';
@@ -46,6 +47,7 @@ const Search = () => {
         <title>4_Hope - Home</title>
         <meta name="description" content="4_Hope Home Page" />
       </Helmet>
+      <Header />
       <section>
         <InstitutionForm setInstitutions={setInstitutions} />
       </section>

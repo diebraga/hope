@@ -95,7 +95,7 @@ const InstitutionForm = props => {
                 width={25}
               />
             </div> :
-            <button className='btn btn-success btn-sm btn-block' type="submit">Submit</button>
+            <button className='btn btn-danger btn-sm btn-block' type="submit">Submit</button>
           }
         </div>
       </form>
