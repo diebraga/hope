@@ -24,7 +24,9 @@ const Home = () => {
         setCount(res.data.count);
         setPrevious(res.data.previous);
         setNext(res.data.next);
-      } catch (err) {}
+      } catch (err) {
+        console.error('Error connecting API', err.message);
+      }
     };
 
     fetchData();
@@ -75,7 +77,9 @@ const Home = () => {
         setNext(res.data.next);
         setActive(page);
       })
-      .catch(err => {});
+      .catch(err => {
+        console.error('Error connecting API', err.message);
+      });
   };
 
   const previous_number = () => {
@@ -87,7 +91,9 @@ const Home = () => {
         setNext(res.data.next);
         if (previous) setActive(active - 1);
       })
-      .catch(err => {});
+      .catch(err => {
+        console.error('Error connecting API', err.message);
+      });
   };
 
   const next_number = () => {
@@ -99,7 +105,9 @@ const Home = () => {
         setNext(res.data.next);
         if (next) setActive(active + 1);
       })
-      .catch(err => {});
+      .catch(err => {
+        console.error('Error connecting API', err.message);
+      });
   };
 
   return (

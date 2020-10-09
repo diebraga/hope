@@ -24,7 +24,8 @@ const Signup: React.FC = ({ setAlert, signup, isAuthenticated }: any) => {
   const onSubmit = (e: any): void => {
     e.preventDefault();
 
-    if (password !== password2) setAlert('Passwords do not match', 'error');
+    if (password !== password2)
+      setAlert('Passwords do not match', 'error alert alert-danger');
     else signup({ name, email, password, password2 });
   };
 
@@ -77,7 +78,7 @@ const Signup: React.FC = ({ setAlert, signup, isAuthenticated }: any) => {
                 onChange={e => onChange(e)}
               />
               <button
-                className="btn btn-primary btn-lg btn-block"
+                className="btn btn-success btn-lg btn-block"
                 type="submit"
               >
                 Register

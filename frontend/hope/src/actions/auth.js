@@ -29,13 +29,13 @@ export const login = (email, password) => async dispatch => {
       payload: res.data,
     });
 
-    dispatch(setAlert('Authenticated successfully', 'success'));
+    dispatch(setAlert('Authenticated successfully', 'success alert alert-info'));
   } catch (err) {
     dispatch({
       type: LOGIN_FAIL,
     });
 
-    dispatch(setAlert('Error Authenticating', 'error'));
+    dispatch(setAlert('Error Authenticating', 'error alert alert-danger'));
   }
 };
 
@@ -71,11 +71,11 @@ export const signup = ({
       type: SIGNUP_FAIL,
     });
 
-    dispatch(setAlert('Error Authenticating', 'error'));
+    dispatch(setAlert('Error Authenticating', 'error alert alert-danger'));
   }
 };
 
 export const logout = () => dispatch => {
-  dispatch(setAlert('logout successful.', 'success'));
+  dispatch(setAlert('logout successful.', 'success alert alert-info'));
   dispatch({ type: LOGOUT });
 };

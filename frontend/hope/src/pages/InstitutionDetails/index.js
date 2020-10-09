@@ -21,7 +21,9 @@ const InstitutionDetail = props => {
       .then(res => {
         setInstitution(res.data);
       })
-      .catch(err => {});
+      .catch(err => {
+        console.error('Error connecting API', err.message);
+      });
   }, [props.match.params.id]);
 
   useEffect(() => {
@@ -39,7 +41,9 @@ const InstitutionDetail = props => {
         .then(res => {
           setVolunteer(res.data);
         })
-        .catch(err => {});
+        .catch(err => {
+          console.error('Error connecting API', err.message);
+        });
     }
   }, institution.volunteer);
 
