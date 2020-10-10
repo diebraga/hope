@@ -61,27 +61,27 @@ const Header: React.FC = ({
           >
             <ul className="navbar-nav">
               <li>
-                <Link className="nav-link text-secondary" to="/">
+                <Link className="nav-link text-danger" to="/">
                   Wellcome
                 </Link>
               </li>
               <li>
-                <Link className="nav-link text-secondary" to="/home">
-                  Home
+                <Link className="nav-link text-danger" to="/institutions">
+                  Institutions
                 </Link>
               </li>
               <li>
-                <Link className="nav-link text-secondary" to="/search">
+                <Link className="nav-link text-danger" to="/search">
                   Search
                 </Link>
               </li>
               <li>
-                <Link className="nav-link text-secondary" to="/about">
+                <Link className="nav-link text-danger" to="/about">
                   About
                 </Link>
               </li>
               <li>
-                <Link className="nav-link text-secondary" to="/">
+                <Link className="nav-link text-danger" to="/">
                   aaa
                 </Link>
               </li>

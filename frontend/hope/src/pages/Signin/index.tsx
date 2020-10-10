@@ -27,7 +27,7 @@ const Signin: React.FC = ({ login, isAuthenticated }: any) => {
     login(email, password);
   };
 
-  if (isAuthenticated) return <Redirect to="/home" />;
+  if (isAuthenticated) return <Redirect to="/institutions" />;
 
   return (
     <>

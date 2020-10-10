@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
+import Header from '../../components/Header';
 import axios from 'axios';
 import Card from '../../components/Card';
 import Pagination from '../../components/Pagination';
@@ -112,6 +113,7 @@ const Home = () => {
 
   return (
     <main className="institutions">
+      <Header />
       <Helmet>
         <title>4_Hope - Institutions</title>
         <meta name="description" content="institutions page" />
