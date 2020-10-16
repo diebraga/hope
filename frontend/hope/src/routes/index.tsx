@@ -8,6 +8,7 @@ import Signup from '../pages/Signup';
 import Wellcome from '../pages/Wellcome';
 import About from '../pages/About';
 import Notfound from '../components/Notfound';
+import Donation from '../pages/Donation/index.js';
 import Institutions from '../pages/Institutions/index.js';
 import InstitutionsDetail from '../pages/InstitutionDetails/index.js';
 import PrivateRoute from '../components/PrivateRoute/index.js';
@@ -17,6 +18,7 @@ const Routes: React.FC = () => (
     <Route path="/search" exact component={Search} />
     <Route path="/institutions" exact component={Institutions} />
     <Route path="/institutions/:id" exact component={InstitutionsDetail} />
+    <Route path="/donation" component={Donation} />
     <Route path="/signin" component={Signin} />
     <Route path="/signup" component={Signup} />
     <Route path="/about" exact component={About} />
