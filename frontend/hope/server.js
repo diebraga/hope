@@ -1,15 +1,13 @@
 const express = require('express')
 const Stripe = require('stripe')
-const keys = require('./config/dev')
 const cors = require('cors')
-
 
 const app = express()
 
 app.use(express.json())
 app.use(cors())
 
-const stripe = new Stripe(keys.stripeSecret)
+const stripe = new Stripe('< YOUR_STRIPE_SECRET_KEY >')
 
 app.post('/payment', async (req, res) => {
 

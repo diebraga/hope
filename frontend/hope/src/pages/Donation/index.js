@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import ProductCard from "../../components/Product"
-import CheckoutForm from "../../components/Checkout"
-import {Elements} from "@stripe/react-stripe-js"
-import {loadStripe} from "@stripe/stripe-js"
+import ProductCard from "../../components/Product";
+import CheckoutForm from "../../components/Checkout";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import Header from '../../components/Header';
 
-const stripePromise = loadStripe('pk_live_51HV03zJuRjbktOF0CQ08Ng2fz2cRuu81ebLxecY9ZRLLak7JS8sLSFxmR2Y0mpUDlVhM0y4QVUsRFKsXUilUBkNf00o1ofbu6o')
+const stripePromise = loadStripe('< YOUR_STRIPE_PUBLIC_KEY >')
 
 stripePromise.then(data => {
   console.log(data)
@@ -14,31 +15,28 @@ const Donation = () => {
 
   const [products, setProducts] = useState([
     {
-    img: "http",
-    name: "",
+    img: "https://images.pexels.com/photos/358482/pexels-photo-358482.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    name: "$",
     price: 50
     },
     {
-      img: "",
-      name: "",
+      img: "https://images.pexels.com/photos/352550/pexels-photo-352550.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+      name: "$",
       price: 100
     },
     {
-      img: "",
-      name: "",
+      img: "https://images.pexels.com/photos/1080722/pexels-photo-1080722.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      name: "$",
       price: 200
     },
     {
-      img: "",
-      name: "",
+      img: "https://images.pexels.com/photos/51387/mount-everest-himalayas-nuptse-lhotse-51387.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+      name: "$",
       price: 400
     }
   ])
 
-  const [product, setProduct] = useState({
-    name: "Organic Apple",
-    price: 70
-  })
+  const [product, setProduct] = useState('')
 
   const displayProducts = () => {
     return products.map(product => {
@@ -55,14 +53,21 @@ const Donation = () => {
     <Elements
       stripe={stripePromise}
     >
-      <div className="container-fluid">
-        <div className="">
-          {displayProducts()}
+     <Header />
+      <div className="container-fluid col-sm-8">
+        <br/>
+        <h2 className="text-center text-dark">4_Hope</h2>
+        <br/>
+        <div>
+          <div>
+            {displayProducts()}
+          </div>
+          <CheckoutForm
+            product={product}
+          />
         </div>
-        <CheckoutForm
-          product={product}
-        />
       </div>
+      <br/>
     </Elements>
   );
 }

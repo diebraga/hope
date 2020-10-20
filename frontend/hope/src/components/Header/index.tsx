@@ -81,8 +81,8 @@ const Header: React.FC = ({
                 </Link>
               </li>
               <li>
-                <Link className="nav-link text-danger" to="/">
-                  aaa
+                <Link className="nav-link text-danger" to="/donation">
+                  Donation
                 </Link>
               </li>
             </ul>

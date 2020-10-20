@@ -42,6 +42,12 @@ const Wellcome: React.FC = () => {
                 <FiCornerDownRight />
               </h4>
             </Link>
+            <Link to="/donation">
+              <h4>
+                Donate
+                <FiCornerDownRight />
+              </h4>
+            </Link>
           </div>
         </Fade>
       </Container>
