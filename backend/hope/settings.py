@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'accounts',
     'volunteers',
     'institutions',
+    'contacts',
 ]
 
 MIDDLEWARE = [
@@ -75,6 +76,14 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# Allow your business email to recieve contacts
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = config('YOUR_EMAIL')
+EMAIL_HOST_PASSWORD = config('PASS_EMAIL')
+EMAIL_USE_TLS = True
 
 
 # Password validation
