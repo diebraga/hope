@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header';
+import Contact from '../../components/Contact';
 
 import { Container } from './styles';
 
@@ -20,6 +21,7 @@ const About: React.FC = () => {
           better future.
         </p>
       </Container>
+      <Contact />
     </>
   );
 };
