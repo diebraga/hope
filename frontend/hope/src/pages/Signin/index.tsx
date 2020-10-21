@@ -61,7 +61,7 @@ const Signin: React.FC = ({ login, isAuthenticated }: any) => {
                 onChange={e => onChange(e)}
               />
               <button className="btn btn-danger btn-lg btn-block" type="submit">
-                Register
+                Login
               </button>
             </div>
           </form>
