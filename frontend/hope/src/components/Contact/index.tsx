@@ -1,16 +1,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-shadow */
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
 import axios from 'axios';
-import { connect } from 'react-redux';
 import Loader from 'react-loader-spinner';
-import PropTypes from 'prop-types';
-import { setAlert } from '../../actions/alert';
 
-// import { Container } from './styles';
+import { Container } from './styles';
 
-const Contact: React.FC = ({ setAlert }: any) => {
+const Contact: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -46,29 +42,27 @@ const Contact: React.FC = ({ setAlert }: any) => {
         config,
       )
       .then(res => {
-        setAlert('Message Sent', 'success');
+        window.alert('Message sent!');
         setLoading(false);
         window.scrollTo(0, 0);
       })
       .catch(err => {
-        setAlert('Error Sending Message', 'error');
+        window.alert('Error sending message!');
         setLoading(false);
         window.scrollTo(0, 0);
       });
   };
 
   return (
-    <div className="">
-      <Helmet>
-        <title>Realest Estate - Contact</title>
-        <meta name="description" content="Contact us" />
-      </Helmet>
-      <form className="" onSubmit={e => onSubmit(e)}>
+    <Container>
+      <br />
+      <h2 className="text-center">Contact Us</h2>
+      <form className="form-group" onSubmit={e => onSubmit(e)}>
         <label className="" htmlFor="name">
           Name*
         </label>
         <input
-          className=""
+          className="form-control"
           name="name"
           type="text"
           placeholder="Full Name"
@@ -80,7 +74,7 @@ const Contact: React.FC = ({ setAlert }: any) => {
           Email*
         </label>
         <input
-          className=""
+          className="form-control"
           name="email"
           type="email"
           placeholder="Your Email"
@@ -92,7 +86,7 @@ const Contact: React.FC = ({ setAlert }: any) => {
           Subject*
         </label>
         <input
-          className=""
+          className="form-control"
           name="subject"
           type="text"
           placeholder="Subject"
@@ -101,31 +95,31 @@ const Contact: React.FC = ({ setAlert }: any) => {
           required
         />
         <label className="" htmlFor="message">
-          Message
+          Message*
         </label>
         <textarea
-          className=""
+          className="form-control"
           name="message"
           placeholder="Message"
           onChange={e => onChange(e)}
           value={message}
+          required
         />
+        <br />
         {loading ? (
-          <div className="__loader">
+          <div>
             <Loader type="ThreeDots" color="#424242" height={50} width={50} />
           </div>
         ) : (
-          <button className="" type="submit">
+          <button className="btn btn-danger btn-lg btn-block" type="submit">
             Send
           </button>
         )}
       </form>
-    </div>
+      <br />
+      <br />
+    </Container>
   );
 };
 
-Contact.propTypes = {
-  setAlert: PropTypes.func.isRequired,
-};
-
-export default connect(null, { setAlert })(Contact);
+export default Contact;

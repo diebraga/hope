@@ -20,7 +20,9 @@ const About: React.FC = () => {
           you are giving smiles to children's faces and contributing for a
           better future.
         </p>
+        <br />
       </Container>
+      <br />
       <Contact />
     </>
   );

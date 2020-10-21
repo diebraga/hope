@@ -9,6 +9,7 @@ export const Container = styled.div`
   width: 100%;
   background: black;
   color: white;
+
   h1 {
     margin-top: 40px;
   }
@@ -20,5 +21,11 @@ export const Container = styled.div`
   @media (max-width: 400px) {
     flex: 1;
     background: url(${Child}) no-repeat center;
+  }
+
+  @media (min-width: 900px) {
+    p {
+      max-width: 40%;
+    }
   }
 `;

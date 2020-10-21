@@ -29,7 +29,7 @@ export const login = (email, password) => async dispatch => {
       payload: res.data,
     });
 
-    dispatch(setAlert('Authenticated successfully', 'success alert alert-info'));
+    dispatch(setAlert('Authenticated successfully', 'success alert alert-success'));
   } catch (err) {
     dispatch({
       type: LOGIN_FAIL,
@@ -76,6 +76,6 @@ export const signup = ({
 };
 
 export const logout = () => dispatch => {
-  dispatch(setAlert('logout successful.', 'success alert alert-info'));
+  dispatch(setAlert('logout successful.', 'success alert alert-success'));
   dispatch({ type: LOGOUT });
 };
